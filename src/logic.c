@@ -54,14 +54,14 @@ int     x_algoritm(t_vector **vec, char **str)
 }*/
 
 
-int		main_function(t_vector **vec, int c, char **str)
+int		main_function(t_vector **vec, int c, char **str, int size)
 {
 	t_node  *node;
 	int     i;
 	char	*str2;
 
-	str2 = ft_strnew(((*vec)->size * (*vec)->size) + 1);
-	str2 = ft_strcpy(str2, (*str));
+	str2 = ft_memalloc((size * size) + 1);
+	str2 = ft_memmove(str2, (*str), size * size);
 	i = 0;
 	if (c != (*vec)->size)
 		node = ft_get_index(c, &(*vec));
@@ -73,11 +73,13 @@ int		main_function(t_vector **vec, int c, char **str)
 		{
 			if (c + 1 == (*vec)->size)
 				return (1);
-			if ((main_function(&(*vec), c + 1, &(*str)) == 1))
+			if ((main_function(&(*vec), c + 1, &(*str), size) == 1))
 				return (1);
-			(*str) = ft_strcpy((*str),str2);
+			(*str) = ft_memmove((*str), str2, size * size);
 		}
 		i++;
+		printf("%s\n", (*str));
 	}
+	ft_memdel((void *)&str2);
 	return (0);
 }

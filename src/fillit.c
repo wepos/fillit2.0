@@ -67,23 +67,25 @@ void	fillit(char *file_filit)
 		ft_strdel(&buf);
 	}
 	move_to_vec(&vec, buf);
+	long int ss = 0;
 	size = size_map(vec->size);
-	str = ft_strnew((size * size) + 1);
+	str = ft_memalloc((size * size) + 1);
 	ft_memset(str, '0', (size * size));
 	write_tetr(&vec, size);
 	make_matrix(&vec, size);
+	while(main_function(&vec, 0, &str, size) != 1)
+	{
+		ft_strdel(&str);
+		size += 1;
+		str = ft_memalloc((size * size) + 1);
+		ft_memset(str, '0', (size * size));
+		write_tetr(&vec, size);
+		make_matrix(&vec, size);
+	}
+	printf("%d\n", size);
 
-//	while(main_function(&vec, 0, &str) != 1)
-//	{
-//		free(str);
-//		size += 1;
-//		str = ft_strnew((size * size) + 1);
-//		ft_memset(str, '0', (size * size));
-//		write_tetr(&vec, size);
-//		make_matrix(&vec, size);
-//	}
-//	printf("%s\n", str);
-//	paint_map(size, &str);
+	paint_map(size, &str);
+
 //	ft_put_double_array(ft_get_index(0, &vec)->matrix);
 
 //	printf("\n%d - %d - %d - %d\n", ft_get_index(2, &vec)->tetr[0],ft_get_index(2, &vec)->tetr[1],ft_get_index(2, &vec)->tetr[2],ft_get_index(2, &vec)->tetr[3]);

@@ -14,6 +14,7 @@
 
 int main(int argc, char **argv)
 {
-	fillit("/Users/gdaemoni/CLionProjects/fillit/tetr_file");
+	//printf("%s\n", argv[1]);
+	fillit("/Users/fnancy/mainLearn/fillit_final/tetr_file");
 	return 0;
 }

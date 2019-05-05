@@ -23,7 +23,7 @@
 int				is_valid_file(char *buf);
 char			*read_file(char *file_name, char *dest);
 void			fillit(char *file_filit);
-int				main_function(t_vector **vec, int c, char **str);
+int				main_function(t_vector **vec, int c, char **str, int size);
 int				check_tetr(char *buf);
 void			move_to_vec(t_vector **vec, char *buf);
 void			make_matrix(t_vector **vec, int size);

@@ -44,6 +44,10 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/Users/gdaemoni/CLionProjects/fillit/includes"/>
+					<Add directory="/Users/gdaemoni/CLionProjects/fillit/libft"/>
+					<Add directory="/Users/gdaemoni/CLionProjects/fillit/src"/>
+					<Add directory="/Users/gdaemoni/CLionProjects/fillit/vector"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
@@ -65,6 +69,10 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/Users/gdaemoni/CLionProjects/fillit/includes"/>
+					<Add directory="/Users/gdaemoni/CLionProjects/fillit/libft"/>
+					<Add directory="/Users/gdaemoni/CLionProjects/fillit/src"/>
+					<Add directory="/Users/gdaemoni/CLionProjects/fillit/vector"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
@@ -80,10 +88,16 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/gdaemoni/CLionProjects/fillit/includes/fillit.h">
+			<Option target="fillit"/>
+		</Unit>
 		<Unit filename="/Users/gdaemoni/CLionProjects/fillit/libft/ft_atoi.c">
 			<Option target="fillit"/>
 		</Unit>
 		<Unit filename="/Users/gdaemoni/CLionProjects/fillit/libft/ft_bzero.c">
+			<Option target="fillit"/>
+		</Unit>
+		<Unit filename="/Users/gdaemoni/CLionProjects/fillit/libft/ft_counter_chr.c">
 			<Option target="fillit"/>
 		</Unit>
 		<Unit filename="/Users/gdaemoni/CLionProjects/fillit/libft/ft_isalnum.c">

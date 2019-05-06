@@ -12,7 +12,7 @@
 
 #include "../includes/fillit.h"
 
-int 	ft_sqrt(int n)
+int		ft_sqrt(int n)
 {
 	int i;
 	int iter;
@@ -28,7 +28,7 @@ int 	ft_sqrt(int n)
 	return (i);
 }
 
-int 	size_map(int size)
+int		size_map(int size)
 {
 	int rez;
 
@@ -65,7 +65,7 @@ void	fill_matrix(int size, t_node **node, char ch)
 		{
 			if ((((*node)->tetr[j] + step) % size) == 0 && j > 0)
 			{
-				if (((*node)->tetr[j] + step) - ((*node)->tetr[j - 1] + step) != 1)
+				if (((*node)->tetr[j] + step) - ((*node)->tetr[j - 1] + step) != 1 && (*node)->tetr[j] + step < (size * size))
 					(*node)->matrix[i][(*node)->tetr[j] + step] = ch;
 				else
 				{
@@ -74,7 +74,7 @@ void	fill_matrix(int size, t_node **node, char ch)
 					break;
 				}
 			}
-			else if ((*node)->tetr[j] + step < size * size)
+			else if ((*node)->tetr[j] + step < (size * size))
 				(*node)->matrix[i][(*node)->tetr[j] + step] = ch;
 			else
 			{
@@ -106,30 +106,11 @@ void	trim_matrix(t_node **node, int size)
 					(*node)->matrix[i] = (*node)->matrix[k];
 					(*node)->matrix[k] = NULL;
 					k = -1;
-					break;
+					break ;
 				}
 				k++;
 			}
 		}
-		i++;
-	}
-}
-
-void	make_cpy_matrix(t_node **node)
-{
-	int i;
-	int size;
-
-	size = 0;
-	i = 0;
-	while ((*node)->matrix[i++])
-		size++;
-	i = 0;
-	(*node)->matrix_cpy = (char **)malloc(sizeof(char *) * (size + 1));
-	(*node)->matrix_cpy[size] = NULL;
-	while (i < size)
-	{
-		(*node)->matrix_cpy[i] = (*node)->matrix[i];
 		i++;
 	}
 }
@@ -148,7 +129,6 @@ void	make_matrix(t_vector **vec, int size)
 		malloc_matrix(size, &node);
 		fill_matrix(size, &node, ch++);
 		trim_matrix(&node, size * size);
-		make_cpy_matrix(&node);
 		k++;
 	}
 }

@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_C
   "/Users/gdaemoni/CLionProjects/fillit/libft/ft_atoi.c" "/Users/gdaemoni/CLionProjects/fillit/cmake-build-debug/CMakeFiles/fillit.dir/libft/ft_atoi.c.o"
   "/Users/gdaemoni/CLionProjects/fillit/libft/ft_bzero.c" "/Users/gdaemoni/CLionProjects/fillit/cmake-build-debug/CMakeFiles/fillit.dir/libft/ft_bzero.c.o"
+  "/Users/gdaemoni/CLionProjects/fillit/libft/ft_counter_chr.c" "/Users/gdaemoni/CLionProjects/fillit/cmake-build-debug/CMakeFiles/fillit.dir/libft/ft_counter_chr.c.o"
   "/Users/gdaemoni/CLionProjects/fillit/libft/ft_isalnum.c" "/Users/gdaemoni/CLionProjects/fillit/cmake-build-debug/CMakeFiles/fillit.dir/libft/ft_isalnum.c.o"
   "/Users/gdaemoni/CLionProjects/fillit/libft/ft_isalpha.c" "/Users/gdaemoni/CLionProjects/fillit/cmake-build-debug/CMakeFiles/fillit.dir/libft/ft_isalpha.c.o"
   "/Users/gdaemoni/CLionProjects/fillit/libft/ft_isascii.c" "/Users/gdaemoni/CLionProjects/fillit/cmake-build-debug/CMakeFiles/fillit.dir/libft/ft_isascii.c.o"
@@ -84,6 +85,10 @@ set(CMAKE_C_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
+  "../includes"
+  "../libft"
+  "../src"
+  "../vector"
   )
 
 # Targets to which this target links.

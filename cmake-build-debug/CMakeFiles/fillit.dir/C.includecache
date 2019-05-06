@@ -26,31 +26,7 @@ stdlib.h
 stdio.h
 -
 
-/Users/gdaemoni/CLionProjects/fillit/src/check_file.c
-../includes/fillit.h
-/Users/gdaemoni/CLionProjects/fillit/includes/fillit.h
-
 /Users/gdaemoni/CLionProjects/fillit/src/check_tetr.c
-../includes/fillit.h
-/Users/gdaemoni/CLionProjects/fillit/includes/fillit.h
-
-/Users/gdaemoni/CLionProjects/fillit/src/fillit.c
-../includes/fillit.h
-/Users/gdaemoni/CLionProjects/fillit/includes/fillit.h
-
-/Users/gdaemoni/CLionProjects/fillit/src/logic.c
-../includes/fillit.h
-/Users/gdaemoni/CLionProjects/fillit/includes/fillit.h
-
-/Users/gdaemoni/CLionProjects/fillit/src/main.c
-../includes/fillit.h
-/Users/gdaemoni/CLionProjects/fillit/includes/fillit.h
-
-/Users/gdaemoni/CLionProjects/fillit/src/matrix.c
-../includes/fillit.h
-/Users/gdaemoni/CLionProjects/fillit/includes/fillit.h
-
-/Users/gdaemoni/CLionProjects/fillit/src/move_to_vec.c
 ../includes/fillit.h
 /Users/gdaemoni/CLionProjects/fillit/includes/fillit.h
 

@@ -21,7 +21,6 @@ typedef struct			s_node
 	int 				content_size;
 	int 				tetr[4];
 	char 				**matrix;
-	char 				**matrix_cpy;
 	unsigned int		index;
 	struct s_node		*next;
 }						t_node;

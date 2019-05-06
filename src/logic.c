@@ -12,7 +12,7 @@
 
 #include "../includes/fillit.h"
 
-int 	cmp_matr_line(char **str, char *str2)
+int		cmp_matr_line(char **str, char *str2)
 {
 	int i;
 
@@ -33,35 +33,14 @@ int 	cmp_matr_line(char **str, char *str2)
 	return (1);
 }
 
-/*
-int     x_algoritm(t_vector **vec, char **str)
+int		main_function(t_vector **vec, int c, char **str, int size)
 {
-    int		i;
-    t_node	*node;
-    char 	**main_matrix;
-    char	**matrix;
-    int		count;
-
-    main_matrix = (char**)malloc(sizeof(char*) * (*vec)->size * (*vec)->size);
-    get_main_matrix(ft_get_index(0, &(*vec))->matrix, &main_matrix);
-    i = 0;
-    count = 0;
-    while (i < (*vec)->size - 1)
-    {
-        node = ft_get_index(i, &(*vec));
-        count +=
-    }
-}*/
-
-
-int		main_function(t_vector **vec, int c, char **str)
-{
-	t_node  *node;
-	int     i;
+	t_node	*node;
+	int		i;
 	char	*str2;
 
-	str2 = ft_strnew(((*vec)->size * (*vec)->size) + 1);
-	str2 = ft_strcpy(str2, (*str));
+	str2 = ft_memalloc((size * size) + 1);
+	str2 = ft_memmove(str2, (*str), size * size);
 	i = 0;
 	if (c != (*vec)->size)
 		node = ft_get_index(c, &(*vec));
@@ -73,11 +52,12 @@ int		main_function(t_vector **vec, int c, char **str)
 		{
 			if (c + 1 == (*vec)->size)
 				return (1);
-			if ((main_function(&(*vec), c + 1, &(*str)) == 1))
+			if ((main_function(&(*vec), c + 1, &(*str), size) == 1))
 				return (1);
-			(*str) = ft_strcpy((*str),str2);
+			(*str) = ft_memmove((*str), str2, size * size);
 		}
 		i++;
 	}
+	ft_memdel((void *)&str2);
 	return (0);
 }

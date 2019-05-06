@@ -12,7 +12,7 @@
 
 #include "../includes/fillit.h"
 
-int		first_check_tetr(int i, int count, char *buf, int res_second)
+int		first_check_tetr(int i, int count, const char *buf, int res_second)
 {
 	if (count == 0 && (buf[i + 1] == '#'))
 		res_second++;
@@ -44,26 +44,28 @@ int		first_check_tetr(int i, int count, char *buf, int res_second)
 int		check_tetr(char *buf)
 {
 	int i;
+	int dot;
 	int count;
 	int res_first;
-	int res_second;
 
 	i = -1;
+	dot = 0;
 	count = -1;
 	res_first = 0;
-	res_second = 12;
 	while (buf[++i])
 	{
 		if (++count == 21)
 		{
-			if ((res_first != 6 && res_first != 8) || res_second == 0)
+			if ((res_first != 6 && res_first != 8) || (dot % 12) != 0)
 				return (0);
 			count = 0;
 			res_first = 0;
-			res_second = 12;
 		}
 		if (buf[i] == '#')
 			res_first = first_check_tetr(i, count, buf, res_first);
+		(buf[i] == '.' ? dot++ : dot);
 	}
+	if ((res_first != 6 && res_first != 8))
+		return (0);
 	return (1);
 }

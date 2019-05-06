@@ -177,6 +177,33 @@ libft/ft_bzero.c.s:
 	$(MAKE) -f CMakeFiles/fillit.dir/build.make CMakeFiles/fillit.dir/libft/ft_bzero.c.s
 .PHONY : libft/ft_bzero.c.s
 
+libft/ft_counter_chr.o: libft/ft_counter_chr.c.o
+
+.PHONY : libft/ft_counter_chr.o
+
+# target to build an object file
+libft/ft_counter_chr.c.o:
+	$(MAKE) -f CMakeFiles/fillit.dir/build.make CMakeFiles/fillit.dir/libft/ft_counter_chr.c.o
+.PHONY : libft/ft_counter_chr.c.o
+
+libft/ft_counter_chr.i: libft/ft_counter_chr.c.i
+
+.PHONY : libft/ft_counter_chr.i
+
+# target to preprocess a source file
+libft/ft_counter_chr.c.i:
+	$(MAKE) -f CMakeFiles/fillit.dir/build.make CMakeFiles/fillit.dir/libft/ft_counter_chr.c.i
+.PHONY : libft/ft_counter_chr.c.i
+
+libft/ft_counter_chr.s: libft/ft_counter_chr.c.s
+
+.PHONY : libft/ft_counter_chr.s
+
+# target to generate assembly for a file
+libft/ft_counter_chr.c.s:
+	$(MAKE) -f CMakeFiles/fillit.dir/build.make CMakeFiles/fillit.dir/libft/ft_counter_chr.c.s
+.PHONY : libft/ft_counter_chr.c.s
+
 libft/ft_isalnum.o: libft/ft_isalnum.c.o
 
 .PHONY : libft/ft_isalnum.o
@@ -2163,6 +2190,9 @@ help:
 	@echo "... libft/ft_bzero.o"
 	@echo "... libft/ft_bzero.i"
 	@echo "... libft/ft_bzero.s"
+	@echo "... libft/ft_counter_chr.o"
+	@echo "... libft/ft_counter_chr.i"
+	@echo "... libft/ft_counter_chr.s"
 	@echo "... libft/ft_isalnum.o"
 	@echo "... libft/ft_isalnum.i"
 	@echo "... libft/ft_isalnum.s"

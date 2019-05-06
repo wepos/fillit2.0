@@ -12,8 +12,11 @@
 
 #include "../includes/fillit.h"
 
-int main(int argc, char **argv)
+int		main(int argc, char **argv)
 {
-	fillit("/Users/gdaemoni/CLionProjects/fillit/tetr_file");
-	return 0;
+	if (argc != 2)
+		ft_putstr("error/n");
+	else
+		fillit(argv[1]);
+	return (0);
 }

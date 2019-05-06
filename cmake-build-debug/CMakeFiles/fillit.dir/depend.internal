@@ -7,6 +7,9 @@ CMakeFiles/fillit.dir/libft/ft_atoi.c.o
 CMakeFiles/fillit.dir/libft/ft_bzero.c.o
  /Users/gdaemoni/CLionProjects/fillit/libft/ft_bzero.c
  /Users/gdaemoni/CLionProjects/fillit/libft/libft.h
+CMakeFiles/fillit.dir/libft/ft_counter_chr.c.o
+ /Users/gdaemoni/CLionProjects/fillit/libft/ft_counter_chr.c
+ /Users/gdaemoni/CLionProjects/fillit/libft/libft.h
 CMakeFiles/fillit.dir/libft/ft_isalnum.c.o
  /Users/gdaemoni/CLionProjects/fillit/libft/ft_isalnum.c
  /Users/gdaemoni/CLionProjects/fillit/libft/libft.h

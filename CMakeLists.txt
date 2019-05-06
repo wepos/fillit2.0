@@ -1,18 +1,18 @@
 cmake_minimum_required(VERSION 3.13)
 project(fillit C)
 
-set(CMAKE_C_STANDARD 99)
-set(CMAKE_CURRENT_SOURCE_DIR libft)
-set(CMAKE_CURRENT_SOURCE_DIR src)
+set(CMAKE_C_STANDARD 11)
 
-add_executable(fillit src/main.c
-        vector/ft_add_node.c
-        vector/ft_get_index.c
-        vector/ft_new_node.c
-        vector/ft_new_vector.c
-        vector/ft_vector.h
+include_directories(includes)
+include_directories(libft)
+include_directories(src)
+include_directories(vector)
+
+add_executable(fillit
+        includes/fillit.h
         libft/ft_atoi.c
         libft/ft_bzero.c
+        libft/ft_counter_chr.c
         libft/ft_isalnum.c
         libft/ft_isalpha.c
         libft/ft_isascii.c
@@ -35,6 +35,7 @@ add_executable(fillit src/main.c
         libft/ft_memdel.c
         libft/ft_memmove.c
         libft/ft_memset.c
+        libft/ft_put_double_array.c
         libft/ft_putchar.c
         libft/ft_putchar_fd.c
         libft/ft_putendl.c
@@ -75,8 +76,15 @@ add_executable(fillit src/main.c
         libft/ft_tolower.c
         libft/ft_toupper.c
         libft/libft.h
-        libft/ft_put_double_array.c
         src/check_file.c
         src/check_tetr.c
         src/fillit.c
-        src/move_to_vec.c src/matrix.c src/logic.c)
+        src/logic.c
+        src/main.c
+        src/matrix.c
+        src/move_to_vec.c
+        vector/ft_add_node.c
+        vector/ft_get_index.c
+        vector/ft_new_node.c
+        vector/ft_new_vector.c
+        vector/ft_vector.h)

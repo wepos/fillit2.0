@@ -14,16 +14,13 @@
 
 int		check_symbol(char c)
 {
-	int fl;
-
-	fl = 0;
 	if (c == '.')
-		fl = 1;
+		return (1);
 	if (c == '#')
-		fl = 1;
+		return (1);
 	if (c == '\n')
-		fl = 1;
-	return (fl);
+		return (1);
+	return (0);
 }
 
 int		check_file(char *buf)
@@ -55,11 +52,6 @@ int		check_file(char *buf)
 	return (1);
 }
 
-void	ft_error(void)
-{
-	write(2, "error\n", 6);
-}
-
 int		is_valid_file(char *buf)
 {
 	if (!buf)
@@ -71,11 +63,12 @@ int		is_valid_file(char *buf)
 	return (1);
 }
 
-char	*read_file(char *file_name, char *dest)
+char	*read_file(char *file_name)
 {
 	char	buf[BUF_SIZE];
 	int		fd;
 	int		rd;
+	char	*dest;
 
 	fd = open(file_name, O_RDONLY);
 	if (fd < 0)
@@ -89,6 +82,6 @@ char	*read_file(char *file_name, char *dest)
 	close(fd);
 	dest = (char*)malloc(sizeof(char) * rd + 1);
 	buf[rd] = '\0';
-	ft_memcpy(dest, buf, rd);
+	ft_strcpy(dest, buf);
 	return (dest);
 }

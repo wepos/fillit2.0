@@ -1,24 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_add_node.c                                      :+:      :+:    :+:   */
+/*   size.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fnancy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/26 18:21:43 by fnancy            #+#    #+#             */
-/*   Updated: 2019/04/26 18:21:43 by fnancy           ###   ########.fr       */
+/*   Created: 2019/05/07 22:02:05 by fnancy            #+#    #+#             */
+/*   Updated: 2019/05/07 22:02:05 by fnancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_vector.h"
+#include "../includes/fillit.h"
 
-void	ft_add_node(t_node **node, t_vector **vec)
+int		ft_sqrt(int n)
 {
-	(*node)->index = (*vec)->size;
-	if (!((*vec)->node))
-		(*node)->next = NULL;
-	else
-		(*node)->next = (*vec)->node;
-	(*vec)->node = (*node);
-	(*vec)->size += 1;
+	int i;
+	int iter;
+
+	i = 1;
+	iter = n / 2;
+	while (i < iter)
+	{
+		if ((i * i) >= n)
+			return (i);
+		i++;
+	}
+	return (i);
+}
+
+int		size_map(int size)
+{
+	int rez;
+
+	rez = size * 4;
+	return (ft_sqrt(rez));
 }

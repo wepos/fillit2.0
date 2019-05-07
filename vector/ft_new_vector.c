@@ -12,7 +12,7 @@
 
 #include "ft_vector.h"
 
-t_vector		*ft_new_vector()
+t_vector		*ft_new_vector(void)
 {
 	t_vector	*ptr;
 

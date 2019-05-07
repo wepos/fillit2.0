@@ -12,30 +12,6 @@
 
 #include "../includes/fillit.h"
 
-int		ft_sqrt(int n)
-{
-	int i;
-	int iter;
-
-	i = 1;
-	iter = n / 2;
-	while (i < iter)
-	{
-		if ((i * i) >= n)
-			return (i);
-		i++;
-	}
-	return (i);
-}
-
-int		size_map(int size)
-{
-	int rez;
-
-	rez = size * 4;
-	return (ft_sqrt(rez));
-}
-
 void	malloc_matrix(int size, t_node **node)
 {
 	int i;
@@ -54,42 +30,25 @@ void	malloc_matrix(int size, t_node **node)
 void	fill_matrix(int size, t_node **node, char ch)
 {
 	int i;
+	int st;
 	int j;
-	int step;
 
-	step = -1;
-	i = -1;
-	while (i++ < (size * size) && (j = -1) == -1 && ++step > -1)
+	if (size == 3)
+		return (create_matr_for3(&(*node), ch));
+	st = -1;
+	i = 0;
+	(*node)->symbol = ch;
+	while (i < (size * size) && ++st > -1)
 	{
-		while (++j < 4)
-		{
-			if ((((*node)->tetr[j] + step) % size) == 0 && j > 0)
-			{
-				if (((*node)->tetr[j] + step) - ((*node)->tetr[j - 1] + step) != 1 && (*node)->tetr[j] + step < (size * size))
-					(*node)->matrix[i][(*node)->tetr[j] + step] = ch;
-				else
-				{
-					ft_strdel(&(*node)->matrix[i]);
-					(*node)->matrix[i] = NULL;
-					break;
-				}
-			}
-			else if ((*node)->tetr[j] + step < (size * size))
-				(*node)->matrix[i][(*node)->tetr[j] + step] = ch;
-			else
-			{
-				ft_strdel(&(*node)->matrix[i]);
-				(*node)->matrix[i] = NULL;
-				break;
-			}
-		}
+		j = check_tetra_matrix(st, size, &(*node), i);
+		i++;
 	}
 }
 
 void	trim_matrix(t_node **node, int size)
 {
-	int		i;
-	int 	k;
+	int	i;
+	int	k;
 
 	i = 0;
 	k = -1;

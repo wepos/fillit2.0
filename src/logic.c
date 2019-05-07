@@ -33,6 +33,12 @@ int		cmp_matr_line(char **str, char *str2)
 	return (1);
 }
 
+int		free_and_return(char **str)
+{
+	ft_memdel((void *)&(*str));
+	return (1);
+}
+
 int		main_function(t_vector **vec, int c, char **str, int size)
 {
 	t_node	*node;
@@ -51,9 +57,9 @@ int		main_function(t_vector **vec, int c, char **str, int size)
 		if (cmp_matr_line(&(*str), node->matrix[i]) == 1)
 		{
 			if (c + 1 == (*vec)->size)
-				return (1);
+				return (free_and_return(&str2));
 			if ((main_function(&(*vec), c + 1, &(*str), size) == 1))
-				return (1);
+				return (free_and_return(&str2));
 			(*str) = ft_memmove((*str), str2, size * size);
 		}
 		i++;

@@ -23,5 +23,6 @@ t_node		*ft_new_node(char *content, int content_size)
 	ptr->content_size = content_size;
 	ptr->matrix = NULL;
 	ptr->next = NULL;
+	ptr->symbol = '0';
 	return (ptr);
 }

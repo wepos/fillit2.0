@@ -80,7 +80,7 @@ char	*read_file(char *file_name)
 		return (NULL);
 	}
 	close(fd);
-	dest = (char*)malloc(sizeof(char) * rd + 1);
+	dest = (char*)malloc(sizeof(char) * (rd + 1));
 	buf[rd] = '\0';
 	ft_strcpy(dest, buf);
 	return (dest);

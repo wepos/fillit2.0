@@ -12,11 +12,11 @@
 
 #include "libft.h"
 
-size_t	ft_counter_chr(char *str, char c)
+size_t		ft_counter_chr(char *str, char c)
 {
-	size_t i;
-	size_t count;
-	
+	size_t	i;
+	size_t	count;
+
 	i = 0;
 	count = 0;
 	while (str[i])

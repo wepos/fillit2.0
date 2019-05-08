@@ -11,16 +11,27 @@
 # **************************************************************************** #
 
 NAME := fillit
+NAME_LIB := libft.a
+SRC_LIB := ./libft
+INSLUDES_LIB = ./libft/libft.h ./libft/vector/ft_vector.h
+FLAGS = -W -Wall -Wextra -Werror
 
 all: $(NAME)
-	
-$(NAME):
-	gcc -o $(NAME) src/*.c -L./libft -lft -L./vector -lvector -I ./includes/fillit.h
+
+createlib:
+	gcc -c ${SRC_LIB}/ft_*.c ${FLAGS} 
+	gcc -c ${SRC_LIB}/vector/ft_*.c ${FLAGS}
+	ar rc ${SRC_LIB}/$(NAME_LIB) ft_*.o
+	ranlib ${SRC_LIB}/$(NAME_LIB)	
+
+$(NAME): createlib
+	gcc -o $(NAME) src/*.c -L./libft -lft -I ./includes/fillit.h ${FLAGS}
 
 clean:
-	@rm -f *.o
+	@rm -f ft_*.o
 
 fclean: clean
 	rm -f $(NAME)
+	rm -f $(SRC_LIB)/$(NAME_LIB)
 
 re: fclean all

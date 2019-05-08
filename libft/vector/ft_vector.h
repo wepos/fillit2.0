@@ -13,7 +13,7 @@
 #ifndef FILLIT_FT_VECTOR_H
 # define FILLIT_FT_VECTOR_H
 
-# include "../libft/libft.h"
+# include "../libft.h"
 
 typedef struct			s_node
 {
@@ -22,14 +22,14 @@ typedef struct			s_node
 	int					tetr[4];
 	char				**matrix;
 	char				symbol;
-	unsigned int		index;
+	int					index;
 	struct s_node		*next;
 }						t_node;
 
 typedef struct			s_vector
 {
 	struct s_node		*node;
-	unsigned int		size;
+	int					size;
 }						t_vector;
 
 t_vector				*ft_new_vector();

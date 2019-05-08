@@ -17,7 +17,7 @@ t_node		*ft_get_index(int index, t_vector **vec)
 	t_node	*tmp;
 
 	tmp = (*vec)->node;
-	if (index > (*vec)->size - 1 || index < 0)
+	if (index > (*vec)->size - 1)
 		return (NULL);
 	while (tmp->index != index)
 		tmp = tmp->next;

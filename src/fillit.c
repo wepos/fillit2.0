@@ -29,6 +29,37 @@ void	paint_map(int size, char **str)
 	}
 }
 
+void	paint_square(void)
+{
+	ft_putchar('A');
+	ft_putchar('A');
+	ft_putchar('\n');
+	ft_putchar('A');
+	ft_putchar('A');
+	ft_putchar('\n');
+}
+
+int		check_square(t_vector **vec)
+{
+	if ((*vec)->size == 1 && ft_get_index(0, &(*vec))->tetr[0] == 0
+			&& ft_get_index(0, &(*vec))->tetr[1] == 1
+			&& ft_get_index(0, &(*vec))->tetr[2] == 2
+			&& ft_get_index(0, &(*vec))->tetr[3] == 3)
+	{
+		paint_square();
+		return (1);
+	}
+	return (0);
+}
+
+void	innit_matrix(char **str, t_vector **vec, int size)
+{
+	(*str) = ft_memalloc((size * size) + 1);
+	ft_memset((*str), '0', (size * size));
+	write_tetr(&(*vec), size);
+	make_matrix(&(*vec), size);
+}
+
 void	fillit(char *file_filit)
 {
 	char		*buf;
@@ -41,18 +72,14 @@ void	fillit(char *file_filit)
 		return (ft_putstr("error\n"));
 	move_to_vec(&vec, buf);
 	size = size_map(vec->size);
-	str = ft_memalloc((size * size) + 1);
-	ft_memset(str, '0', (size * size));
-	write_tetr(&vec, size);
-	make_matrix(&vec, size);
+	innit_matrix(&str, &vec, size);
+	if (check_square(&vec) == 1)
+		return ;
 	while (main_function(&vec, 0, &str, size) != 1)
 	{
 		ft_strdel(&str);
 		size += 1;
-		str = ft_memalloc((size * size) + 1);
-		ft_memset(str, '0', (size * size));
-		write_tetr(&vec, size);
-		make_matrix(&vec, size);
+		innit_matrix(&str, &vec, size);
 	}
 	paint_map(size, &str);
 }

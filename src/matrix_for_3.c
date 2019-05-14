@@ -17,8 +17,8 @@ char	*create_path(t_node **node)
 	char	*result;
 	int		j;
 
-	result = ft_strnew(18);
-	result = ft_strcat(result, "./filesfor3/");
+	result = ft_strnew(7);
+	result = ft_strcat(result, "B_");
 	j = 0;
 	while (j < 4)
 	{
@@ -40,28 +40,27 @@ void	null_for_matr_3(int i, t_node **node)
 void	create_matr_for3(t_node **node, char ch)
 {
 	char	*file;
-	char	buf[10];
+	char	*name;
 	int		i;
 	int		j;
-	int		fd;
+	int		k;
 
-	i = 0;
-	file = create_path(&(*node));
-	if ((fd = open(file, O_RDONLY)) > 0)
+	i = -1;
+	j = 0;
+	k = 0;
+	name = create_path(&(*node));
+	get_const(&file, name);
+	while (file[++i])
 	{
-		while (read(fd, buf, 9) > 0)
-		{
-			j = -1;
-			while (++j < 9)
-				if (buf[j] == '1')
-					(*node)->matrix[i][j] = ch;
-			(*node)->matrix[i][10] = '\0';
-			read(fd, buf, 1);
-			i++;
-		}
-		null_for_matr_3(i, &(*node));
+		(*node)->matrix[j][10] = '\0';
+		if (file[i] != '\n')
+			if (file[i] == '1')
+				(*node)->matrix[j][k] = ch;
+			else
+				(*node)->matrix[j][k] = '.';
+		else if ((k = -1))
+			j++;
+		k++;
 	}
-	else
-		null_for_matr_3(i, &(*node));
-	close(fd);
+	return (null_for_matr_3(j, &(*node)));
 }

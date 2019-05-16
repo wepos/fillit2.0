@@ -24,8 +24,8 @@ void	get_const_2(char **str, char *name)
 		*str = B_1346;
 	if (ft_strcmp(name, "B_1347") == 0)
 		*str = B_1347;
-	if (ft_strcmp(name, "B_1476") == 0)
-		*str = B_1476;
+	if (ft_strcmp(name, "B_1467") == 0)
+		*str = B_1467;
 	if (ft_strcmp(name, "B_2345") == 0)
 		*str = B_2345;
 }

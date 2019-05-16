@@ -71,9 +71,13 @@ void	fillit(char *file_filit)
 	if (is_valid_file(buf) == 0)
 		return (ft_putstr("error\n"));
 	move_to_vec(&vec, buf);
-	size = size_map(vec->size);
+	if (vec->size == 1 && ft_get_index(0, &vec)->content[0] == 'A'
+		&& ft_get_index(0, &vec)->content[3] == 'A')
+		size = 4;
+	else
+		size = size_map(vec->size);
 	innit_matrix(&str, &vec, size);
-	if (check_square(&vec) == 1)
+	if (size < 4 && check_square(&vec) == 1)
 		return ;
 	while (main_function(&vec, 0, &str, size) != 1)
 	{
